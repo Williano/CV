@@ -1,0 +1,238 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Classic CV | {% block title%}{% endblock%}</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Classic CV Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--// Meta tag Keywords -->
+<!-- css files -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" /> <!-- Bootstrap-Core-CSS -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" /> <!-- Style-CSS -->
+<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+<link type="text/css" rel="stylesheet" href="{% static 'css/cm-overlay.css' %}" />
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+<!-- //online-fonts -->
+</head>
+<body>
+
+{% block header %}
+    <!-- header -->
+		<div class="header">
+			<div class="container">
+				<div class="logo">
+					<h1><a href="{% url 'home:home' %}">Classic CV</a></h1>
+				</div>
+				<div class="menu">
+					<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
+					<nav>
+						<a href="{% url 'home:home' %}" class="active">Home</a>
+						<a href="{% url 'about_me:about_me' %}" class="">About Me</a>
+						<a href="{% url 'my_skills:my_skills' %}" class="">My Skills</a>
+						<a href="{% url 'my_services:my_services' %}" class="">My Services</a>
+						<a href="{% url 'experience:experience' %}" class="">Experience</a>
+						<a href="{% url 'my_education:my_education' %}" class="">My Education</a>
+						<a href="{% url 'my_projects:my_projects' %}" class="">My Projects</a>
+						<a href="{% url 'contact_me:contact_me' %}" class="">Contact Me</a>
+					</nav>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+
+
+
+{% block footer %}
+
+<!-- footer -->
+<div class="footer w3ls">
+	<div class="container">
+		<div class="w3ls-social-icons-2">
+			<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+			<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+			<a class="pinterest" href="#"><i class="fa fa-google-plus"></i></a>
+			<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+			<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+		</div>
+	</div>
+</div>
+<div class="copyrights">
+	<p>&copy; 2017 Classic CV. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+</div>
+<!-- //footer -->
+
+{% endblock %}
+
+
+
+<!-- js-scripts -->
+<!-- js -->
+<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //js -->
+
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+<!-- for-bottom-to-top smooth scrolling -->
+<script type="text/javascript">
+	$(document).ready(function() {
+	/*
+		var defaults = {
+		containerID: 'toTop', // fading element id
+		containerHoverID: 'toTopHover', // fading element hover id
+		scrollSpeed: 1200,
+		easingType: 'linear'
+		};
+	*/
+	$().UItoTop({ easingType: 'easeOutQuart' });
+	});
+</script>
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //for-bottom-to-top smooth scrolling -->
+<!-- menu-script -->
+<script>
+	(function($){
+		// Menu Functions
+		$(document).ready(function(){
+		$('#menuToggle').click(function(e){
+			var $parent = $(this).parent('.menu');
+		  $parent.toggleClass("open");
+		  var navState = $parent.hasClass('open') ? "hide" : "show";
+		  $(this).attr("title", navState + " navigation");
+				// Set the timeout to the animation length in the CSS.
+				setTimeout(function(){
+					console.log("timeout set");
+					$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+				}, 200);
+			e.preventDefault();
+		});
+	  });
+	})(jQuery);
+</script>
+<!-- //menu-script -->
+<!-- baneer-js -->
+<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+<script>
+	// You can also use "$(window).load(function() {"
+	$(function () {
+	  // Slideshow 4
+	  $("#slider").responsiveSlides({
+		auto: true,
+		pager:false,
+		nav:false,
+		speed: 500,
+		namespace: "callbacks",
+		before: function () {
+		  $('.events').append("<li>before event fired.</li>");
+		},
+		after: function () {
+		  $('.events').append("<li>after event fired.</li>");
+		}
+	  });
+
+	});
+</script>
+<!-- //baneer-js -->
+<!-- skills -->
+<script src="{% static 'js/skill.bars.jquery.js' %}"></script>
+<script>
+	$(document).ready(function(){
+
+		$('.skillbar').skillBars({
+			from: 0,
+			speed: 4000,
+			interval: 100,
+			decimals: 0,
+		});
+
+	});
+</script>
+<!-- //skills -->
+<!-- timeline -->
+<script type="text/javascript" src="{% static 'js/jquery.cntl.js' %}"></script>
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$('.cntl').cntl({
+			revealbefore: 300,
+			anim_class: 'cntl-animate',
+			onreveal: function(e){
+				console.log(e);
+			}
+		});
+	});
+</script>
+<!-- //timeline -->
+<!-- accordion -->
+<script>
+	jQuery(document).ready(function() {
+	function close_accordion_section() {
+		jQuery('.accordion .accordion-section-title').removeClass('active');
+		jQuery('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+	}
+
+	jQuery('.accordion-section-title').click(function(e) {
+		// Grab current anchor value
+		var currentAttrValue = jQuery(this).attr('href');
+
+		if(jQuery(e.target).is('.active')) {
+			close_accordion_section();
+		}else {
+			close_accordion_section();
+
+			// Add active class to section title
+			jQuery(this).addClass('active');
+			// Open up the hidden content panel
+			jQuery('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+		}
+
+		e.preventDefault();
+	});
+	});
+</script>
+<!-- //accordion -->
+<!-- for projects -->
+<script src="{% static 'js/jquery.tools.min.js' %}"></script>
+<script src="{% static 'js/jquery.mobile.custom.min.js' %}"></script>
+<script src="{% static 'js/jquery.cm-overlay.js' %}"></script>
+<script>
+	$(document).ready(function(){
+		$('.cm-overlay').cmOverlay();
+	});
+</script>
+<!-- //for projects -->
+<!-- smooth scrolling -->
+<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+<!-- //smooth scrolling -->
+<!-- //js-scripts -->
+
+</body>
+
+</html>
